@@ -1,97 +1,195 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 📱 MangaSer - Manga Browser
 
-# Getting Started
+<div align="center">
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+![Manga Reader](https://img.shields.io/badge/Manga-Reader-blue?style=for-the-badge&logo=android)
+![React Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
 
-## Step 1: Start Metro
+**A powerful, feature-rich manga reader application built with React Native**
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+[Features](#-features) • [Installation](#-installation) • [Screenshots](#-screenshots) • [Development](#-development) • [Contributing](#-contributing)
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+</div>
 
-```sh
-# Using npm
-npm start
+## 🌟 Features
 
-# OR using Yarn
-yarn start
+### 📖 Reading Experience
+- **WebView-based Reader**: Optimized manga reading experience with custom injection scripts
+- **Site Optimization**: Custom UI improvements for popular manga sites (Komikcast, Komiku, MangaKakalot, etc.)
+- **Ad Blocking**: Automatic removal of ads and unnecessary elements for clean reading
+- **Reading Modes**: Support for various reading orientations and zoom levels
+
+### 📚 Library Management
+- **Bookmarks**: Save your favorite manga for quick access
+- **Reading History**: Automatic tracking of read chapters and progress
+- **Library Organization**: Categorize and organize your manga collection
+- **Search & Filter**: Find manga quickly with advanced search options
+
+### ⬇️ Download System
+- **Offline Reading**: Download chapters for offline reading
+- **Progress Tracking**: Real-time download progress with notifications
+- **Storage Management**: Efficient storage with compression options
+- **Batch Downloads**: Download multiple chapters simultaneously
+
+### 🔔 Smart Notifications
+- **Update Alerts**: Get notified when new chapters are available
+- **Background Tracking**: Automatic checking for updates in the background
+- **Reading Reminders**: Customizable reminders to continue reading
+- **Download Notifications**: Progress and completion notifications
+
+### 🎨 User Interface
+- **Modern Design**: Clean, intuitive interface with Material Design
+- **Dark/Light Theme**: Comfortable reading in any lighting condition
+- **Responsive Layout**: Optimized for various screen sizes
+- **Bottom Navigation**: Easy access to all features
+
+### ⚙️ Advanced Features
+- **Background Services**: Automatic update checking and notifications
+- **Database Management**: SQLite for efficient local data storage
+- **Settings Customization**: Extensive customization options
+- **Performance Optimization**: Smooth scrolling and fast loading
+
+## 📱 Installation
+
+### Option 1: Download APK (Recommended)
+1. Go to [Releases](https://github.com/MuhamadSyabitHidayattulloh/MangaSer---Manga-Browser/releases)
+2. Download the latest APK file
+3. Enable "Install from unknown sources" in Android settings
+4. Install the APK and enjoy!
+
+### Option 2: Build from Source
+```bash
+# Clone the repository
+git clone https://github.com/MuhamadSyabitHidayattulloh/MangaSer---Manga-Browser.git
+cd MangaSer---Manga-Browser
+
+# Install dependencies
+npm install
+
+# Setup React Native Vector Icons
+npm run postinstall
+
+# For Android
+npx react-native run-android
+
+# For iOS (macOS only)
+cd ios && pod install && cd ..
+npx react-native run-ios
 ```
 
-## Step 2: Build and run your app
+## 🛠️ Development
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+### Prerequisites
+- Node.js (v16 or higher)
+- React Native CLI
+- Android Studio (for Android development)
+- Xcode (for iOS development, macOS only)
+- Java JDK 17
 
-### Android
+### Setup Development Environment
+```bash
+# Install React Native CLI
+npm install -g @react-native-community/cli
 
-```sh
-# Using npm
-npm run android
+# Clone and setup
+git clone https://github.com/MuhamadSyabitHidayattulloh/MangaSer---Manga-Browser.git
+cd MangaSer---Manga-Browser
+npm install
+npm run postinstall
 
-# OR using Yarn
-yarn android
+# Start Metro bundler
+npx react-native start
+
+# Run on Android (in another terminal)
+npx react-native run-android
+
+# Run on iOS (macOS only)
+npx react-native run-ios
 ```
 
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
+### Project Structure
+```
+src/
+├── components/          # Reusable UI components
+│   └── MangaWebView.js # Main WebView component
+├── screens/            # Application screens
+│   ├── HomeScreen.js   # Home/Dashboard
+│   ├── BrowserScreen.js # Manga reading screen
+│   ├── LibraryScreen.js # Bookmarks and library
+│   ├── HistoryScreen.js # Reading history
+│   ├── DownloadsScreen.js # Download management
+│   └── NotificationsScreen.js # Notifications
+├── services/           # Business logic and services
+│   ├── DatabaseService.js # SQLite database operations
+│   ├── DownloadService.js # Download management
+│   ├── UpdateTracker.js # Update tracking
+│   ├── NotificationService.js # Push notifications
+│   └── BackgroundService.js # Background tasks
+└── utils/              # Utility functions
+    └── InjectionScripts.js # WebView injection scripts
 ```
 
-Then, and every time you update your native dependencies, run:
+## 🔧 Configuration
 
-```sh
-bundle exec pod install
-```
+### Supported Manga Sites
+- Komikcast.li
+- Komiku.id
+- MangaKakalot
+- Manganelo
+- And many more...
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+### Customization
+The app includes injection scripts that can be customized for different manga sites. Edit `src/utils/InjectionScripts.js` to add support for new sites or modify existing ones.
 
-```sh
-# Using npm
-npm run ios
+## 📸 Screenshots
 
-# OR using Yarn
-yarn ios
-```
+*Screenshots will be added once the app is built and tested*
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+## 🤝 Contributing
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+We welcome contributions! Please follow these steps:
 
-## Step 3: Modify your app
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-Now that you have successfully run the app, let's make changes!
+### Development Guidelines
+- Follow React Native best practices
+- Write clean, documented code
+- Test your changes thoroughly
+- Update documentation as needed
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+## 📄 License
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+## 🙏 Acknowledgments
 
-## Congratulations! :tada:
+- React Native community for the amazing framework
+- All manga sites that provide content to readers
+- Contributors and testers who help improve the app
 
-You've successfully run and modified your React Native App. :partying_face:
+## 📞 Support
 
-### Now what?
+If you encounter any issues or have questions:
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+1. Check the [Issues](https://github.com/MuhamadSyabitHidayattulloh/MangaSer---Manga-Browser/issues) page
+2. Create a new issue if your problem isn't already reported
+3. Provide detailed information about the issue
 
-# Troubleshooting
+## 🔄 Updates
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+The app includes automatic update checking. You'll be notified when new versions are available.
 
-# Learn More
+---
 
-To learn more about React Native, take a look at the following resources:
+<div align="center">
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+**Built with ❤️ for manga lovers**
+
+[⭐ Star this repo](https://github.com/MuhamadSyabitHidayattulloh/MangaSer---Manga-Browser) if you find it useful!
+
+</div>
