@@ -1,0 +1,11 @@
+node_modules/
+*.log
+.DS_Store
+android/app/build/
+ios/build/
+*.keystore
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
